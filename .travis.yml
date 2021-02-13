@@ -12,6 +12,8 @@ matrix:
     include:
         - php: 7.4
           env: TARGET=test
+        - php: 8.0
+          env: TARGET=test
         - php: 7.2
           env: TARGET=test COMPOSER_FLAGS="--prefer-stable --prefer-lowest"
 
