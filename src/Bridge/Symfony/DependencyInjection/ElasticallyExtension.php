@@ -46,7 +46,7 @@ class ElasticallyExtension extends Extension
     {
         $indexNameMapper = new ChildDefinition('elastically.abstract.index_name_mapper');
         $indexNameMapper->replaceArgument('$prefix', $config['prefix']);
-        $indexNameMapper->replaceArgument('$indexClassMapping', $config['index_class_mapping']);
+        $indexNameMapper->replaceArgument('$indexClassMapping', $config['index_class_mapping'] ?? '%kernel.project_dir%/config/elasticsearch');
         $container->setDefinition("elastically.{$name}.index_name_mapper", $indexNameMapper);
 
         if (\array_key_exists('context_builder_service', $config['serializer'])) {
